@@ -8,7 +8,7 @@ def test_home():
 def test_add_task():
     client = app.test_client()
     response = client.post("/tasks", json={"text": "belajar pytest"})
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert response.get_json()["text"] == "belajar pytest"
     
 def test_get_tasks():
